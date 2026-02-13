@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enta Krithun🙃💗</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+background:#000;
+color:white;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top left,#0b1c2d 0%,#000 60%),
+radial-gradient(circle at bottom right,#3b0a18 0%,#000 70%);
+z-index:-1;
+}
+
+.screen{
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+height:100vh;
+padding:20px;
+position:relative;
+}
+
+.active{
+display:flex;
+}
+
+img,video{
+width:85%;
+max-width:350px;
+max-height:55vh;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+.double-img{
+display:flex;
+gap:8px;
+justify-content:center;
+flex-wrap:wrap;
+margin-bottom:15px;
+}
+
+.double-img img{
+width:42%;
+}
+
+.collage{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:6px;
+width:85%;
+max-width:300px;
+margin-bottom:15px;
+}
+
+.collage img{
+width:100%;
+height:80px;
+object-fit:cover;
+}
+
+.text{
+display:none;
+font-size:18px;
+margin-top:8px;
+}
+
+button{
+padding:10px 20px;
+margin:5px;
+border:none;
+border-radius:20px;
+background:#3b0a18;
+color:white;
+font-size:14px;
+cursor:pointer;
+}
+
+/* LAST SLIDE SCROLL ENABLED */
+#slide11{
+overflow-y:auto;
+height:100vh;
+justify-content:flex-start;
+padding-top:40px;
+}
+
+#slide11 video{
+width:90%;
+max-width:500px;
+height:auto;
+max-height:none;
+object-fit:contain;
+border-radius:12px;
+margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="screen active" id="intro">
+<h3>Ehm Ehm knd nokku my loveee🌚</h3>
+<button onclick="goTo('suspense')">Start</button>
+</div>
+
+<!-- SUSPENSE -->
+<div class="screen" id="suspense">
+<h3>Apo Kanale HEHE😚</h3>
+<button onclick="goTo('slide1')">Beru Beru My Vavuuu🌷</button>
+</div>
+
+<!-- Slide 1 -->
+<div class="screen" id="slide1">
+<img src="slide1.jpg">
+<div class="text" id="text1">Aa Blush😭</div>
+<button onclick="playSong('isq_risk.mp3','text1')">Play</button>
+<button onclick="goTo('slide2')">Next</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="screen" id="slide2">
+<img src="slide2.jpg">
+<div class="text" id="text2">Aa Moham Ethra Kandalum🌚</div>
+<button onclick="playSong('burgad.mp3','text2')">Play</button>
+<button onclick="goTo('slide3')">Next</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="screen" id="slide3">
+<img src="slide3.jpg">
+<div class="text" id="text3">Hehe Kanande Nmk Miss chynnnn🙃💗</div>
+<button onclick="playSong('aaj_din_chadheya.mp3','text3')">Play</button>
+<button onclick="goTo('slide4')">Next</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="screen" id="slide4">
+<img src="slide4.jpg">
+<div class="text" id="text4">Chettan Chadhichila Ann Hehe😚😚</div>
+<button onclick="playSong('chaar_kadam.mp3','text4')">Play</button>
+<button onclick="goTo('slide5')">Next</button>
+</div>
+
+<!-- Slide 5 -->
+<div class="screen" id="slide5">
+<div class="double-img">
+<img src="slide5a.jpg">
+<img src="slide5b.jpg">
+</div>
+<div class="text" id="text5">My Madamji Rules🙇</div>
+<button onclick="playSong('dil_kaa_jo_haal.mp3','text5')">Play</button>
+<button onclick="goTo('slide6')">Next</button>
+</div>
+
+<!-- Slide 6 -->
+<div class="screen" id="slide6">
+<img src="slide6.jpg">
+<div class="text" id="text6">Date??</div>
+<button onclick="playSong('kyon.mp3','text6')">Play</button>
+<button onclick="goTo('slide7')">Next</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="screen" id="slide7">
+<div class="double-img">
+<img src="slide7a.jpg">
+<img src="slide7b.jpg">
+</div>
+<div class="text" id="text7">PERFECT💓</div>
+<button onclick="playSong('hummingbird.mp3','text7')">Play</button>
+<button onclick="goTo('slide8')">Next</button>
+</div>
+
+<!-- Slide 8 -->
+<div class="screen" id="slide8">
+<img src="slide8.jpg">
+<div class="text" id="text8">My Baby Peach😗</div>
+<button onclick="playSong('i_love_you.mp3','text8')">Play</button>
+<button onclick="goTo('slide9')">Next</button>
+</div>
+
+<!-- Slide 9 -->
+<div class="screen" id="slide9">
+<video id="video9" src="slide9.mp4" muted loop playsinline></video>
+<button onclick="playSlide9()">Play</button>
+<button onclick="goTo('slide10')">Next</button>
+</div>
+
+<!-- Slide 10 -->
+<div class="screen" id="slide10">
+<div class="collage">
+<img src="collage1.jpg">
+<img src="collage2.jpg">
+<img src="collage3.jpg">
+<img src="collage4.jpg">
+<img src="collage5.jpg">
+<img src="collage6.jpg">
+<img src="collage7.jpg">
+<img src="collage8.jpg">
+<img src="collage9.jpg">
+</div>
+<div class="text" id="text10">Us Forever🫠💗</div>
+<button onclick="playSong('perfect.mp3','text10')">Play</button>
+<button onclick="goTo('slide11')">Next</button>
+</div>
+
+<!-- FINAL SLIDE 11 (FULL VIDEO, SCROLL ALLOWED) -->
+<div class="screen" id="slide11">
+<video id="finalVideo" src="slide11.mp4" loop playsinline></video>
+<h3>I Miss US🙃</h3>
+<button onclick="playFinalVideo()">Play</button>
+</div>
+
+<script>
+let currentAudio=new Audio();
+
+function goTo(id){
+currentAudio.pause();
+document.querySelectorAll("video").forEach(v=>v.pause());
+document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+
+function playSong(song,textId){
+currentAudio.pause();
+currentAudio=new Audio(song);
+currentAudio.play();
+document.querySelectorAll(".text").forEach(t=>t.style.display="none");
+document.getElementById(textId).style.display="block";
+}
+
+function playSlide9(){
+currentAudio.pause();
+currentAudio=new Audio("matargashti.mp3");
+currentAudio.play();
+let video=document.getElementById("video9");
+video.currentTime=0;
+video.play();
+}
+
+function playFinalVideo(){
+let video=document.getElementById("finalVideo");
+video.currentTime=0;
+video.play();
+}
+</script>
+
+</body>
+</html>
+
